@@ -1,4 +1,8 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 /*
@@ -18,7 +22,18 @@ public class Main{
         System.out.println("Bienvenido a su colección de pokemones");
         System.out.println("Por favor, ingrese que tipo de Map quiere utilizar para manejar su coleccion");
         String mapsolicitado = scanner.nextLine();
-        Pokedex <String, ArrayList<String>> Pokedex = new Pokedex<>(mapsolicitado);
+        Pokedex <String, ArrayList<String>> pokedex = new Pokedex<>(mapsolicitado);
         scanner.close();
+        try (BufferedReader lector = new BufferedReader(new FileReader("pokemon_data_pokeapi.csv"))) {
+        String linea;
+        while ((linea = lector.readLine()) != null) {
+            String[] informacion = linea.split(",");
+            ArrayList<String> datos = new ArrayList<>(Arrays.asList(informacion));
+            datos.remove(0);
+            pokedex.getColeccion().put(informacion[0], datos);
+            }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
     }
 }
