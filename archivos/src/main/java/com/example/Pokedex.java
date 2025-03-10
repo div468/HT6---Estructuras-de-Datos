@@ -1,8 +1,4 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
+package com.example;
 import java.util.Map;
 /*
  * Universidad del Valle de Guatemala
@@ -25,4 +21,12 @@ public class Pokedex<K, V>{
         return coleccion;
     }
 
+    public boolean verificarExistencia(String nombrepokemon){
+        if (coleccion.containsKey(nombrepokemon)){
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
 }
