@@ -16,6 +16,12 @@ import java.util.Map;
  */
 
 public class MapFactory<K, V> {
+    /**
+     * @param <K> Tipo de valor asociado a la llave del map
+     * @param <V> Tipo de valor asociado al value del map
+     * @param mapsolicitado El String que indica que implementación de MAP se utilizará
+     * @return La implementación correspondiente de MAP según el argumento ingresado.
+     */
     public static <K, V> Map<K, V> getMap(String mapsolicitado){
         if(mapsolicitado.equalsIgnoreCase("HashMap")){
             return new HashMap<K,V>();
