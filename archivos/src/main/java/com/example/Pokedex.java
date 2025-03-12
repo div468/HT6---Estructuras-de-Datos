@@ -127,7 +127,7 @@ public class Pokedex<K, V>{
      * Método que utiliza el MAP colección con los pokemones leidos en el CSV y los ordena utilizando el merge sort
      * después, los imprime en orden con un for each.
      */
-    public void ordenarPorMergeSort() {
+    public void ordenarPorTipo1PorMergeSort() {
         List<Map.Entry<K, V>> lista = new ArrayList<>(coleccion.entrySet());
         mergeSort(lista);
         System.out.println("Pokemones ordenados por tipo: ");
@@ -143,7 +143,7 @@ public class Pokedex<K, V>{
      * Método encargado de ordenar los pokemones leidos del CSV con las implementaciones MAP
      * obteniendo los pares valor-clave directamente con entry.
      */
-    public void ordenarPokemonesPorTipo1() {
+    public void ordenarPorTipo1Map() {
         List<Map.Entry<K, V>> listaEntradas = new ArrayList<>(coleccion.entrySet());
         listaEntradas.sort((entry1, entry2) -> {
             List<String> atributos1 = (List<String>) entry1.getValue();

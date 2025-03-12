@@ -131,7 +131,7 @@ import java.util.Scanner;
                      break;
                  case 4:
                      System.out.println("Estos son los pokemones ordenados por tipo 1");
-                     pokedex.ordenarPorMergeSort();
+                     pokedex.ordenarPorTipo1Map();
                      break;
                 case 5:
                     System.out.println("Ingrese la habilidad que desea buscar en los Pokémon:");
